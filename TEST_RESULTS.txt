@@ -1,0 +1,8 @@
+AgentShield local test verification
+Date: 2026-10-19
+Command: python -m pytest -q
+Result: 13 passed
+
+Tests cover safe document read, path traversal blocking, fake-secret blocking and audit redaction, unapproved recipient blocking, exact-action approval, requester identity, one-time approval/replay prevention, audit event trail, unknown tool rejection, strict email schema, oversized bodies, and fail-closed ASI1 API errors.
+
+This is a local test result only. It does not establish that Agentverse registration, ASI:One discovery, or a deployed workflow is working.

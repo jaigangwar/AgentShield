@@ -1,0 +1,15 @@
+version: 1
+policy:
+  allowed_tools: [read_document, send_email]
+  approved_documents:
+    - demo_docs/project_brief.txt
+    - demo_docs/malicious_brief.txt
+  never_allow:
+    - arbitrary_shell_execution
+    - arbitrary_filesystem_paths
+    - external_recipients
+    - protected_secret_disclosure
+  approval_required:
+    - send_email
+  fail_closed: true
+  note: Python rules in app/engine.py are authoritative in this MVP; this YAML documents the rules for reviewers.

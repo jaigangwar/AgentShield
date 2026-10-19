@@ -1,0 +1,43 @@
+KARTAVYA / AGENTSHIELD - SUBMISSION CHECKLIST
+
+1. Open AgentShield_MVP folder.
+2. Run the local demo first:
+   py -m venv .venv
+   .venv\Scripts\activate
+   pip install -r requirements.txt
+   python demo.py
+   python -m pytest -q
+   Expected local test result: 13 passed.
+3. Run ASI:One agent:
+   copy .env.example .env
+   Add ASI1_API_KEY from https://asi1.ai/dashboard/api-keys
+   Set a long unique AGENTSHIELD_AGENT_SEED in .env
+   python agent.py
+   Then follow the official agent mailbox + Agentverse setup at:
+   https://uagents.fetch.ai/docs/examples/asi-1
+4. Create a PUBLIC GitHub repository named agentshield and push AgentShield_MVP contents:
+   git init
+   git add .
+   git commit -m "Build AgentShield MVP"
+   git branch -M main
+   git remote add origin https://github.com/YOUR_USERNAME/agentshield.git
+   git push -u origin main
+   Replace YOUR_USERNAME. Make sure .env is NOT uploaded.
+5. In Agentverse, complete mailbox/profile registration. Verify the agent can be discovered and used in an ASI:One conversation. Copy the real Agentverse profile URL and public ASI:One shared-chat URL only after confirming they work.
+6. Record a <=3 minute demo. Do not claim hosted integration if it has not been verified.
+7. The team is Kartavya. Final files are Kartavya_AgentShield.pptx and Kartavya_AgentShield.pdf. The deck is 7 slides and the PDF has been rendered/verified as 7 pages.
+8. Upload the PDF through the Round 1 submission portal specified by the organizer's Round 1 page. If the portal accepts the PPTX as well, attach both. Enter only real GitHub, Agentverse, shared-chat, and demo-video URLs.
+
+90-120 SECOND DEMO SCRIPT
+0-12s: "AgentShield checks an AI agent's action before it can affect a tool. It is a guardrail, not just a prompt-injection banner."
+12-35s: Run python demo.py and show ALLOW for the approved document read.
+35-60s: Show the fake-secret exfiltration scenario. Point out BLOCK and NOT_EXECUTED: the mock email tool was not called.
+60-82s: Show a permitted but sensitive send returning NEEDS APPROVAL. Explain approval is tied to the exact pending action and the original requester.
+82-100s: Show SQLite audit entries containing the decision, reason, and execution status.
+100-115s: "Our MVP uses uAgents and the ASI:One chat protocol; the safety decision is a deterministic server-side policy. Email and documents are mocked. We report only the tests and integrations we have actually verified."
+
+IMPORTANT LIMITATION
+The current code is a single ASI:One-compatible entry-agent candidate with deterministic local threat/policy checks. It is not yet a verified multi-agent deployment. The local code tests pass, but live Agentverse registration, ACP setup, ASI:One discoverability, public GitHub publication, and video recording still require your account and must not be described as completed until tested.
+
+OFFICIAL HACKPACK ELIGIBILITY CHECK
+Before claiming prize eligibility, verify at least one Agentverse registration, ACP, discoverability/use in ASI:One, full primary workflow inside the ASI:One conversation, public GitHub repository with README run/test steps, and a short demo video. Follow the GCET Round 1 Unstop page for the Round 1 upload field(s); the Fetch.ai Hackpack separately lists ecosystem deliverables.

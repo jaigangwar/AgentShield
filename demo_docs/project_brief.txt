@@ -1,0 +1,4 @@
+AgentShield project brief
+Goal: demonstrate that AI agent tool actions are checked before execution.
+Scope: read-only access to approved demo documents, simulated email, deterministic policy checks, optional human approval, and audit logging.
+Safety: no real messages are sent and no production credentials are used.

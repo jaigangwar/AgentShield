@@ -1,0 +1,4 @@
+uagents>=0.22.0
+openai>=1.30.0
+python-dotenv>=1.0.1
+pytest>=8.0.0
